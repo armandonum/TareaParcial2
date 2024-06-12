@@ -41,13 +41,16 @@
         <td>{{ $libro->pais }}</td>
         <td>{{ $libro->precio }}</td>
         <td > 
-            <a href="" class="btn btn-primary">editar</a>
-            <a href="" class="btn btn-danger"><i class="bi bi-file-earmark-excel-fill"></i></a>
+        <a href="{{ route('libros.edit', $libro->id) }}" class="btn btn-primary">Editar</a>
+                        <form action="{{ route('libros.destroy', $libro->id) }}" method="POST" style="display:inline-block;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger"><i class="bi bi-file-earmark-excel-fill"></i></button>
+                        </form>
+            <!-- <a href="" class="btn btn-danger"><i class="bi bi-file-earmark-excel-fill"></i></a> -->
         </td>
     </tr>
       @endforeach
-      
- 
   </tbody>
 </table>
     </div>

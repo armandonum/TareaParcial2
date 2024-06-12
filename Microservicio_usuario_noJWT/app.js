@@ -6,7 +6,6 @@ const app = express();
 
 app.use(bodyParser.json());
 
-// Rutas de usuario
 app.use('/api', usuarioRoutes);
 
 const PORT = process.env.PORT || 3001;
